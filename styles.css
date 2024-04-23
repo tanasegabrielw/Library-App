@@ -4,6 +4,10 @@ body{
     box-sizing: border-box;
     font-size:14px;
 }
+:root{
+    --main-color:rgb(241, 168, 32);
+    --secondary-color:rgb(155, 154, 154);
+}
 
 header{
     width: 100%;
@@ -11,7 +15,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:rgb(155, 154, 154);
+    background-color:var(--secondary-color);
     box-shadow: 0 0 5px black;
 }
 
@@ -23,7 +27,7 @@ header button {
 }
 
 header button:hover{
-    background-color: rgb(241, 168, 32);
+    background-color: var(--main-color);
     font-weight: 800;
 }
 
@@ -37,11 +41,43 @@ header button:hover{
 }
 
 .book-card{
-    border:1px solid  rgb(241, 168, 32);
+    border:5px solid var(--main-color);
+    border-radius:0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap:0.5rem;
     padding:1rem;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap:1rem;
+}
+
+form input[type=text],input[type=number]{
+    width: 100%;
+    padding:0.3rem 0.5rem;
+    border-radius: 0.5rem;
+    border:none;
+    background-color:var(--main-color);
+    box-sizing: border-box;
+}
+input[type=checkbox]{
+    accent-color: var(--main-color);  
+    }
+
+form button{
+    border:none;
+    border-radius: 0.5rem;
+    padding:0.5rem 0.7rem;
+    font-weight: 600;
+    }
+.form-button{
+    background-color: var(--main-color);
+}
+.close-form{
+    background-color: var(--secondary-color);
 }

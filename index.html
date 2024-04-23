@@ -19,13 +19,16 @@
             <input type="checkbox" name="read" id="read" checked>
         </div>
     </div>
-<dialog>
+<dialog open>
     <form action="" method="post">
-        <label for="title">Title:</label><input type="text" name="title" id="title">
-        <label for="author">Author:</label><input type="text" name="author" id="author">
-        <label for="pages">Pages:</label><input type="number" name="pages" id="pages" max="21450">
-        <label for="read">Read:</label><input type="checkbox" name="read" id="read">
-        <button type="submit" class="form-button">Submit Book!</button>
+        <div><label for="title">Title:</label><input type="text" name="title" id="title"></div>
+        <div><label for="author">Author:</label><input type="text" name="author" id="author"></div>
+        <div><label for="pages">Pages:</label><input type="number" name="pages" id="pages" max="21450"></div>
+        <div><label for="read">Read:</label><input type="checkbox" name="read" id="read"></div>
+        <div>
+            <button type="submit" class="form-button">Submit Book!</button>
+            <button autofocus class="close-form">Close</button>
+        </div>
     </form>
 </dialog>
 </body>
