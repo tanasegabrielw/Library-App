@@ -32,12 +32,12 @@ header button:hover{
     justify-content: center;
     align-items: center;
     padding:2rem;
-    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(10rem,1fr));
     gap:1rem;
 }
 
-.book-example{
-    border:1px solid lime;
+.book-card{
+    border:1px solid  rgb(241, 168, 32);
     display: flex;
     flex-direction: column;
     justify-content: center;
