@@ -1,0 +1,47 @@
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-size:14px;
+}
+
+header{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(155, 154, 154);
+    box-shadow: 0 0 5px black;
+}
+
+header button {
+    border:none;
+    border-radius: 5px;
+    padding:0.5rem;
+    font-weight:600;
+}
+
+header button:hover{
+    background-color: rgb(241, 168, 32);
+    font-weight: 800;
+}
+
+.book-shelf{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding:2rem;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    gap:1rem;
+}
+
+.book-example{
+    border:1px solid lime;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem;
+    padding:1rem;
+}
