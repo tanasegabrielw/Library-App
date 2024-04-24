@@ -29,6 +29,7 @@ header button {
 header button:hover{
     background-color: var(--main-color);
     font-weight: 800;
+    cursor: pointer;
 }
 
 .book-shelf{
@@ -68,7 +69,9 @@ form input[type=text],input[type=number]{
 input[type=checkbox]{
     accent-color: var(--main-color);  
     }
-
+    input[type=checkbox]:hover{
+        cursor: pointer;
+    }
 form button{
     border:none;
     border-radius: 0.5rem;
@@ -80,4 +83,14 @@ form button{
 }
 .close-form{
     background-color: var(--secondary-color);
+}
+
+.form-button:hover{
+    color:var(--secondary-color);
+    cursor: pointer;
+}
+.close-form:hover{
+    background-color: red;
+    color:white;
+    cursor: pointer;
 }
