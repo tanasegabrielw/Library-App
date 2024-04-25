@@ -34,7 +34,7 @@ function addBookToLibrary(){
     let newBookTitle=titleBook.value;
     let newBookAuthor=authorBook.value;
     let newBookPages=pagesBook.value;
-    let newBookRead=readBook.value;
+    let newBookRead=readBook.checked;
     const newBook= new Book(newBookTitle,newBookAuthor,newBookPages,newBookRead);
     myLibrary.push(newBook);
     form.reset();
@@ -75,6 +75,7 @@ function createBookCard(book) {
     card.appendChild(readStatus);
 
     book.arrIndex=myLibrary.findIndex(element => element.title == book.title);
+    // Gets the index for the book to find it in the array
 
     const buttonRemoveBook=document.createElement('button');
     buttonRemoveBook.classList.add('close-form');
