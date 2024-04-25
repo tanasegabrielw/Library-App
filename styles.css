@@ -37,19 +37,17 @@ header button:hover{
     justify-content: center;
     align-items: center;
     padding:2rem;
-    grid-template-columns: repeat(auto-fill,minmax(10rem,1fr));
-    gap:1rem;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    gap:5rem;
 }
 
 .book-card{
     border:5px solid var(--main-color);
     border-radius:0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:0.5rem;
+    text-align: center;
     padding:1rem;
+    overflow-wrap: break-word; /* stop words from overflowing */
+    font-size: 1.2rem;
 }
 
 form{

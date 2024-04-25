@@ -39,3 +39,36 @@ function addBookToLibrary(){
 submitBook.addEventListener('click',(event)=>{
 event.preventDefault();
 addBookToLibrary();});
+
+function displayBooks() {
+    // Clear existing bookshelf content before displaying updated books
+    bookShelf.innerHTML = '';
+
+    myLibrary.forEach(book => {
+        const bookCard = createBookCard(book);
+        bookShelf.appendChild(bookCard);
+    });
+}
+
+function createBookCard(book) {
+    const card = document.createElement('div');
+    card.classList.add('book-card');
+
+    const title = document.createElement('h3');
+    title.textContent = book.title;
+    card.appendChild(title);
+
+    const author = document.createElement('p');
+    author.textContent = 'Author: ' + book.author;
+    card.appendChild(author);
+
+    const pages = document.createElement('p');
+    pages.textContent = 'Pages: ' + book.pages;
+    card.appendChild(pages);
+
+    const readStatus = document.createElement('p');
+    readStatus.textContent = 'Read: ' + (book.read ? 'Yes' : 'No');
+    card.appendChild(readStatus);
+
+    return card;
+}
