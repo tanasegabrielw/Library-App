@@ -4,6 +4,10 @@ body{
     box-sizing: border-box;
     font-size:14px;
 }
+h3,p{
+    margin:0;
+    padding:0;
+}
 :root{
     --main-color:rgb(241, 168, 32);
     --secondary-color:rgb(155, 154, 154);
@@ -37,14 +41,18 @@ header button:hover{
     justify-content: center;
     align-items: center;
     padding:2rem;
-    grid-template-columns: repeat(auto-fill,minmax(20rem,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(10rem,1fr));
     gap:5rem;
 }
 
 .book-card{
     border:5px solid var(--main-color);
     border-radius:0.5rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
     padding:1rem;
     overflow-wrap: break-word; /* stop words from overflowing */
     font-size: 1.2rem;
@@ -67,8 +75,8 @@ form input[type=text],input[type=number]{
 input[type=checkbox]{
     accent-color: var(--main-color);  
     }
-    input[type=checkbox]:hover{
-        cursor: pointer;
+input[type=checkbox]:hover{
+    cursor: pointer;
     }
 form button{
     border:none;

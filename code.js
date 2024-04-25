@@ -70,10 +70,21 @@ function createBookCard(book) {
     pages.textContent = 'Pages: ' + book.pages;
     card.appendChild(pages);
 
-    const readStatus = document.createElement('p');
-    readStatus.textContent = 'Read: ' + (book.read ? 'Yes' : 'No');
-    card.appendChild(readStatus);
+    const divForRead=document.createElement('div');
+    
+    const readStatus = document.createElement('input');
+    readStatus.type = 'checkbox';
+    readStatus.checked = book.read;
+    readStatus.id = 'readStatus'; // Assign an id for the label to reference
 
+    const label = document.createElement('label');
+    label.textContent = 'Read';
+    label.htmlFor = 'readStatus'; // Associate the label with the checkbox
+
+    divForRead.appendChild(label);
+    divForRead.appendChild(readStatus);
+    card.appendChild(divForRead);
+    
     book.arrIndex=myLibrary.findIndex(element => element.title == book.title);
     // Gets the index for the book to find it in the array
 
