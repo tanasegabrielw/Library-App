@@ -37,7 +37,7 @@ header button:hover{
     justify-content: center;
     align-items: center;
     padding:2rem;
-    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(20rem,1fr));
     gap:5rem;
 }
 
@@ -80,6 +80,10 @@ form button{
     background-color: var(--main-color);
 }
 .close-form{
+    border:none;
+    border-radius: 0.5rem;
+    padding:0.5rem 0.7rem;
+    font-weight: 600;
     background-color: var(--secondary-color);
 }
 
@@ -91,4 +95,7 @@ form button{
     background-color: red;
     color:white;
     cursor: pointer;
+}
+dialog{
+    border-radius: 10px;
 }

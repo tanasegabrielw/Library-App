@@ -8,6 +8,7 @@ const submitBook=document.querySelector('.form-button');
 const bookShelf=document.querySelector('.book-shelf');
 const bookCard=document.querySelector('.book-card');
 // form pop-up dialog
+const form =document.querySelector('form');
 const dialog =document.querySelector('dialog');
 const showButton=document.querySelector('.new-book');
 const closeButton=document.querySelector('.close-form');
@@ -26,6 +27,7 @@ this.title=title;
 this.author=author;
 this.pages=pages;
 this.read=read;
+this.arrIndex;
 }
 
 function addBookToLibrary(){
@@ -35,6 +37,8 @@ function addBookToLibrary(){
     let newBookRead=readBook.value;
     const newBook= new Book(newBookTitle,newBookAuthor,newBookPages,newBookRead);
     myLibrary.push(newBook);
+    form.reset();
+    dialog.close();
 }
 submitBook.addEventListener('click',(event)=>{
 event.preventDefault();
@@ -70,5 +74,19 @@ function createBookCard(book) {
     readStatus.textContent = 'Read: ' + (book.read ? 'Yes' : 'No');
     card.appendChild(readStatus);
 
+    book.arrIndex=myLibrary.findIndex(element => element.title == book.title);
+
+    const buttonRemoveBook=document.createElement('button');
+    buttonRemoveBook.classList.add('close-form');
+    buttonRemoveBook.textContent= 'Remove book';
+    buttonRemoveBook.addEventListener('click',()=>{
+        myLibrary.splice(book.arrIndex,1);
+        book.innerHTML='';
+        displayBooks();
+    });
+    card.appendChild(buttonRemoveBook);
+
     return card;
 }
+
+submitBook.addEventListener('click',displayBooks);
