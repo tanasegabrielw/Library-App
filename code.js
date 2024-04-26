@@ -4,10 +4,10 @@ const authorBook=document.querySelector('#author');
 const pagesBook=document.querySelector('#pages');
 const readBook=document.querySelector('#read');
 const submitBook=document.querySelector('.form-button');
-
+// HTML book placement
 const bookShelf=document.querySelector('.book-shelf');
 const bookCard=document.querySelector('.book-card');
-// form pop-up dialog
+// form dialog
 const form =document.querySelector('form');
 const dialog =document.querySelector('dialog');
 const showButton=document.querySelector('.new-book');
@@ -19,7 +19,7 @@ showButton.addEventListener('click',()=>{
 closeButton.addEventListener('click',()=>{
     dialog.close();
 })
-
+// Library App
 const myLibrary=[];
 
 function Book(title,author,pages,read){
@@ -79,12 +79,12 @@ function createBookCard(book) {
     const readStatus = document.createElement('input');
     readStatus.type = 'checkbox';
     readStatus.checked = book.read;
-    readStatus.id = 'readStatus'; // Assign an id for the label to reference
+    readStatus.id = book.arrIndex; // Assign an id for the label to reference
 
 
     const label = document.createElement('label');
     label.textContent = 'Read:';
-    label.htmlFor = 'readStatus'; // Associate the label with the checkbox
+    label.htmlFor = book.arrIndex; // Associate the label with the checkbox
 
     readStatus.addEventListener('change', ()=>{
         book.toggleReadStatus();
