@@ -30,6 +30,10 @@ this.read=read;
 this.arrIndex;
 }
 
+Book.prototype.toggleReadStatus = function(){
+    this.read=!this.read;
+}
+
 function addBookToLibrary(){
     let newBookTitle=titleBook.value;
     let newBookAuthor=authorBook.value;
@@ -77,9 +81,14 @@ function createBookCard(book) {
     readStatus.checked = book.read;
     readStatus.id = 'readStatus'; // Assign an id for the label to reference
 
+
     const label = document.createElement('label');
-    label.textContent = 'Read';
+    label.textContent = 'Read:';
     label.htmlFor = 'readStatus'; // Associate the label with the checkbox
+
+    readStatus.addEventListener('change', ()=>{
+        book.toggleReadStatus();
+    });
 
     divForRead.appendChild(label);
     divForRead.appendChild(readStatus);
@@ -102,3 +111,5 @@ function createBookCard(book) {
 }
 
 submitBook.addEventListener('click',displayBooks);
+
+
