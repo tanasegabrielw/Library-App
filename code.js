@@ -64,6 +64,9 @@ function createBookCard(book) {
     const card = document.createElement('div');
     card.classList.add('book-card');
 
+    book.arrIndex=myLibrary.findIndex(element => element.title == book.title);
+    // Gets the index for the book to find it in the array
+
     const title = document.createElement('h3');
     title.textContent = book.title;
     card.appendChild(title);
@@ -88,24 +91,23 @@ function createBookCard(book) {
     });
 
     const label = document.createElement('label');
-    label.textContent = 'Read:';
+    label.textContent = 'Read: ';
     label.htmlFor = book.arrIndex; // Associate label with checkbox 
 
     divForRead.appendChild(label);
     divForRead.appendChild(readStatus);
     card.appendChild(divForRead);
-    
-    book.arrIndex=myLibrary.findIndex(element => element.title == book.title);
-    // Gets the index for the book to find it in the array
 
     const buttonRemoveBook=document.createElement('button');
     buttonRemoveBook.classList.add('close-form');
     buttonRemoveBook.textContent= 'Remove book';
+
     buttonRemoveBook.addEventListener('click',()=>{
         myLibrary.splice(book.arrIndex,1);
         book.innerHTML='';
         displayBooks();
     });
+    
     card.appendChild(buttonRemoveBook);
 
     return card;
