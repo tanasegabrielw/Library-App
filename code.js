@@ -44,9 +44,6 @@ function addBookToLibrary(){
     form.reset();
     dialog.close();
 }
-submitBook.addEventListener('click',(event)=>{
-event.preventDefault();
-addBookToLibrary();});
 
 function displayBooks() {
     // Clear existing bookshelf content before displaying updated books
@@ -57,6 +54,11 @@ function displayBooks() {
         bookShelf.appendChild(bookCard);
     });
 }
+
+submitBook.addEventListener('click',(event)=>{
+    event.preventDefault();
+    addBookToLibrary();
+    displayBooks();});
 
 function createBookCard(book) {
     const card = document.createElement('div');
@@ -79,16 +81,15 @@ function createBookCard(book) {
     const readStatus = document.createElement('input');
     readStatus.type = 'checkbox';
     readStatus.checked = book.read;
-    readStatus.id = book.arrIndex; // Assign an id for the label to reference
-
-
-    const label = document.createElement('label');
-    label.textContent = 'Read:';
-    label.htmlFor = book.arrIndex; // Associate the label with the checkbox
+    readStatus.id = book.arrIndex; // Assign array index as id for the label to reference
 
     readStatus.addEventListener('change', ()=>{
         book.toggleReadStatus();
     });
+
+    const label = document.createElement('label');
+    label.textContent = 'Read:';
+    label.htmlFor = book.arrIndex; // Associate the label with the checkbox 
 
     divForRead.appendChild(label);
     divForRead.appendChild(readStatus);
@@ -110,6 +111,6 @@ function createBookCard(book) {
     return card;
 }
 
-submitBook.addEventListener('click',displayBooks);
+
 
 
