@@ -16,3 +16,13 @@ Steps:
 + A button to toggle read/unread on each book
 + A button to remove each book
 
+Things left to do:
+
+Add form validation with JS
+Redo the design of the project
+Organize the CSS better
+Add more functions like:
+
+Sort function by name, read status, page number
+Create feature for pages read/total pages
+Add function to edit the book card after it was created
