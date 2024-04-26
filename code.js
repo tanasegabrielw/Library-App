@@ -10,13 +10,13 @@ const bookCard=document.querySelector('.book-card');
 // form dialog
 const form =document.querySelector('form');
 const dialog =document.querySelector('dialog');
-const showButton=document.querySelector('.new-book');
-const closeButton=document.querySelector('.close-form');
+const buttonAddBookForm=document.querySelector('.new-book');
+const buttonCloseForm=document.querySelector('.close-form');
 
-showButton.addEventListener('click',()=>{
+buttonAddBookForm.addEventListener('click',()=>{
     dialog.showModal();
 })
-closeButton.addEventListener('click',()=>{
+buttonCloseForm.addEventListener('click',()=>{
     dialog.close();
 })
 // Library App
