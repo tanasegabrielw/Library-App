@@ -3,7 +3,7 @@ const titleBook=document.querySelector('#title');
 const authorBook=document.querySelector('#author');
 const pagesBook=document.querySelector('#pages');
 const readBook=document.querySelector('#read');
-const submitBook=document.querySelector('.form-button');
+const buttonSubmitBook=document.querySelector('.form-button');
 // HTML book placement
 const bookShelf=document.querySelector('.book-shelf');
 const bookCard=document.querySelector('.book-card');
@@ -55,7 +55,7 @@ function displayBooks() {
     });
 }
 
-submitBook.addEventListener('click',(event)=>{
+buttonSubmitBook.addEventListener('click',(event)=>{
     event.preventDefault();
     addBookToLibrary();
     displayBooks();});
@@ -81,7 +81,7 @@ function createBookCard(book) {
     const readStatus = document.createElement('input');
     readStatus.type = 'checkbox';
     readStatus.checked = book.read;
-    readStatus.id = book.arrIndex; // Assign array index as id for the label to reference
+    readStatus.id = book.arrIndex; // Assign array index as id for the label
 
     readStatus.addEventListener('change', ()=>{
         book.toggleReadStatus();
@@ -89,7 +89,7 @@ function createBookCard(book) {
 
     const label = document.createElement('label');
     label.textContent = 'Read:';
-    label.htmlFor = book.arrIndex; // Associate the label with the checkbox 
+    label.htmlFor = book.arrIndex; // Associate label with checkbox 
 
     divForRead.appendChild(label);
     divForRead.appendChild(readStatus);
